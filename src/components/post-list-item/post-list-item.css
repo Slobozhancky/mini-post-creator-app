@@ -11,6 +11,7 @@
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   margin-bottom: 5px;
+  background-color: aliceblue;
 }
 
 .app-list-item button {
@@ -22,6 +23,12 @@
   cursor: pointer;
   padding: 5px;
   background-color: azure;
+  border: 1px solid #000;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
 }
 
 .app-list-item button img{

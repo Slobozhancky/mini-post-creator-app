@@ -1,13 +1,15 @@
 import AppHeader from "../app-header/app-header";
-import Post from "../post-list-item/post-list-item";
+import SearchPanel from "../search-panel/search-panel";
+import PostList from "../post-list/post-list";
+import AddPost from "../post-add-form/post-add-form";
 import "./app.css";
 const App = (props) => {
   return (
     <div className="app">
       <AppHeader name="Illia Slobodianiuk" all={0} likes={0} />
-      <Post text='hello world'/>
-      <Post text='hello world'/>
-      <Post text='hello world'/>
+      <SearchPanel />
+      <PostList />
+      <AddPost/>
     </div>
   );
 };
