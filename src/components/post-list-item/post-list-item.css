@@ -14,6 +14,15 @@
   background-color: aliceblue;
 }
 
+.app-list-item.post-text {
+  color: #000;
+}
+
+.app-list-item .post-text.important {
+  font-weight: bold;
+  color: green;
+}
+
 .app-list-item button {
   width: 35px;
   height: 35px;
@@ -22,40 +31,41 @@
   border: none;
   cursor: pointer;
   padding: 5px;
-  background-color: azure;
+  background-color: #C6CEBE;
   border: 1px solid #000;
   border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-}
-
-.app-list-item button img{
-  width: 25px;
-  height: 25px;
 }
 
 .app-list-item button:focus {
     box-shadow: none;
     outline: none;
 }
-.app-list-item .btn-star {
-    color: #FFD700;
+
+.app-list-item .btn-group {
+  display: flex;
+  align-items: center;
+
 }
-.app-list-item .btn-trash {
-    color: red;
+
+.app-list-item .btn-group .trash, .app-list-item .btn-group .star  {
+  width: 20px;
+  height: 20px;
 }
-.app-list-item .fa-heart {
-    width: 35px;
-    height: 35px;
-    text-align: center;
-    line-height: 35px;
-    font-size: 16px;
-    color: red;
-    transition: 0.3s all;
-    transform: translateX(30px);
-    opacity: 0;
+
+.app-list-item .btn-group .star, .app-list-item .btn-group .heart {
+  fill: gray;
+}
+
+.app-list-item .btn-group .heart.active {
+  fill: red;
+}
+
+.app-list-item .btn-group .star.important {
+  fill: yellow;
+}
+
+.app-list-item .btn-group .trash {
+  fill: red;
 }
 
 .app-list-item-label {
@@ -66,10 +76,7 @@
   transition: 0.5s all;
 }
 
-.app-list-item.like .fa-heart {
-    opacity: 1;
-    transform: translateX(0px);
-}
+
 
 .app-list-item.important .app-list-item-label {
   color: #FFD700;
