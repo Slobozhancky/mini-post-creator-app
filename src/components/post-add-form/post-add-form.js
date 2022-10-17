@@ -1,6 +1,6 @@
 import Input from "../input/Input";
 import Button from "../btn/btn";
-import "./post-add-form.css";
+import "./post-add-form.scss";
 
 const AddPost = () => {
   return (

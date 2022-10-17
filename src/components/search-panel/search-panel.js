@@ -1,6 +1,6 @@
 import Input from "../input/Input";
 import PostStatusFilter from "../post-status-filter/post-status-filter";
-import "./search-panel.css";
+import "./search-panel.scss";
 const SearchPanel = () => {
   return (
     <div className="search-panel">

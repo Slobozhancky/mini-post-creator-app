@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./post-list-item.css";
+import "./post-list-item.scss";
 import { ReactComponent as Star } from "./star.svg";
 import { ReactComponent as Trash } from "./trash.svg";
 import { ReactComponent as Heart } from "./heart.svg";
@@ -25,9 +25,9 @@ export default class Post extends Component {
   }
 
   render() {
-    const { text } = this.props;
+    const { text, onDelete } = this.props;
     const { important, like } = this.state;
-
+    
     let className = "post-text";
     if (important === true) {
       className += " important";
@@ -55,7 +55,7 @@ export default class Post extends Component {
           <button onClick={this.onLike}>
             <Heart className={classNameHeart} />
           </button>
-          <button>
+          <button onClick={onDelete}>
             <Trash className="trash" />
           </button>
         </span>
