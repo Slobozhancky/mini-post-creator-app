@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/mini-post-creator-app/static/css/main.78c1a70a.css",
-    "main.js": "/mini-post-creator-app/static/js/main.04c9bd96.js",
+    "main.css": "/mini-post-creator-app/static/css/main.d03a2248.css",
+    "main.js": "/mini-post-creator-app/static/js/main.ee54489f.js",
     "static/js/787.73e36017.chunk.js": "/mini-post-creator-app/static/js/787.73e36017.chunk.js",
-    "static/media/trash.svg": "/mini-post-creator-app/static/media/trash.5351b1840338d1a28d0f457e07e6c009.svg",
-    "static/media/star.svg": "/mini-post-creator-app/static/media/star.550f395aa4f18050d7632858809f2178.svg",
+    "static/media/trash.svg": "/mini-post-creator-app/static/media/trash.c927b91f940b10a71fb3eeb8bca3e2f6.svg",
     "index.html": "/mini-post-creator-app/index.html",
-    "main.78c1a70a.css.map": "/mini-post-creator-app/static/css/main.78c1a70a.css.map",
-    "main.04c9bd96.js.map": "/mini-post-creator-app/static/js/main.04c9bd96.js.map",
+    "static/media/star.svg": "/mini-post-creator-app/static/media/star.a6dc763d42bd03b280e55b40beb3f579.svg",
+    "static/media/heart.svg": "/mini-post-creator-app/static/media/heart.0683be34c6d035c43310a4718b5879d6.svg",
+    "main.d03a2248.css.map": "/mini-post-creator-app/static/css/main.d03a2248.css.map",
+    "main.ee54489f.js.map": "/mini-post-creator-app/static/js/main.ee54489f.js.map",
     "787.73e36017.chunk.js.map": "/mini-post-creator-app/static/js/787.73e36017.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.78c1a70a.css",
-    "static/js/main.04c9bd96.js"
+    "static/css/main.d03a2248.css",
+    "static/js/main.ee54489f.js"
   ]
 }
