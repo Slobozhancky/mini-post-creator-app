@@ -1,12 +1,11 @@
 import Input from "../input/Input";
-import Button from "../btn/btn";
 import "./post-add-form.scss";
 
-const AddPost = () => {
+const AddPost = ({onAdd}) => {
   return (
     <div className="post-add-form">
       <Input  placeholder="Чтобы вы хотели добавить ?" />
-      <Button className="add" text="Добавить" />
+      <button className="add" onClick={() => onAdd('Hello')}>Добавить</button>
     </div>
   );
 };
