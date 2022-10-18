@@ -24,12 +24,29 @@ export default class App extends Component {
         },
         { text: "Hello world!!!", important: true, like: false, id: "qwer2" },
       ],
+
+      term: "",
     };
 
     this.deletePost = this.deletePost.bind(this);
     this.addPost = this.addPost.bind(this);
     this.onToggleImportant = this.onToggleImportant.bind(this);
     this.onToggleLiked = this.onToggleLiked.bind(this);
+    this.onUpdateSearch = this.onUpdateSearch.bind(this);
+  }
+
+  searchPost(items, term) {
+    if (term.length === 0) {
+      return items;
+    }
+
+    return items.filter((item) => {
+      return item.text.indexOf(term) > -1;
+    });
+  }
+
+  onUpdateSearch(term) {
+    this.setState({ term });
   }
 
   deletePost(id) {
@@ -99,13 +116,14 @@ export default class App extends Component {
   render() {
     const liked = this.state.data.filter((item) => item.like).length;
     const allPosts = this.state.data.length;
+    const visiblePosts = this.searchPost(this.state.data, this.state.term);
 
     return (
       <div className="app">
         <AppHeader name="Illia Slobodianiuk" all={allPosts} likes={liked} />
-        <SearchPanel />
+        <SearchPanel onUpdateSearch={this.onUpdateSearch} />
         <PostList
-          posts={this.state.data}
+          posts={visiblePosts}
           onDelete={this.deletePost}
           onToggleImportant={this.onToggleImportant}
           onToggleLiked={this.onToggleLiked}

@@ -1,13 +1,30 @@
-import Input from "../input/Input";
+import { Component } from "react";
 import PostStatusFilter from "../post-status-filter/post-status-filter";
 import "./search-panel.scss";
-const SearchPanel = () => {
-  return (
-    <div className="search-panel">
-      <Input className="search-input" placeholder="Поиск по записям" />
-      <PostStatusFilter />
-    </div>
-  );
-};
+export default class SearchPanel extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      term: "",
+    };
+    this.onUpdateSearch = this.onUpdateSearch.bind(this);
+  }
 
-export default SearchPanel;
+  onUpdateSearch(event) {
+    const term = event.target.value;
+    this.setState({ term });
+    this.props.onUpdateSearch(term);
+  }
+  render() {
+    return (
+      <div className="search-panel">
+        <input
+          className="search-input"
+          placeholder="Поиск по записям"
+          onChange={this.onUpdateSearch}
+        />
+        <PostStatusFilter />
+      </div>
+    );
+  }
+}
