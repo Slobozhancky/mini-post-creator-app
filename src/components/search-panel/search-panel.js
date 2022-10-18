@@ -1,5 +1,4 @@
 import { Component } from "react";
-import PostStatusFilter from "../post-status-filter/post-status-filter";
 import "./search-panel.scss";
 export default class SearchPanel extends Component {
   constructor(props) {
@@ -17,14 +16,11 @@ export default class SearchPanel extends Component {
   }
   render() {
     return (
-      <div className="search-panel">
         <input
           className="search-input"
           placeholder="Поиск по записям"
           onChange={this.onUpdateSearch}
         />
-        <PostStatusFilter />
-      </div>
     );
   }
 }

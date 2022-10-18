@@ -1,14 +1,4 @@
-.search-panel {
-  margin: 1rem 0;
-  display: flex;
-}
 
-.search-panel .search-input {
-  width: auto;
-  flex-grow: 1;
-  margin-right: 3px;
-  margin-right: 5px;
-}
 
 button {
   padding: 5px 10px;
@@ -20,8 +10,12 @@ button {
 
 .all {
   width: 40px;
-  background-color: #FCF1D8 ;
+  background-color: #C6CEBE ;
   border-radius: 5px 0px 0px 5px;
+}
+
+.all.active, .likes.active {
+  background-color: #F95A37 ;
 }
 
 .all:hover {

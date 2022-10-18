@@ -2,6 +2,7 @@ import AppHeader from "../app-header/app-header";
 import SearchPanel from "../search-panel/search-panel";
 import PostList from "../post-list/post-list";
 import AddPost from "../post-add-form/post-add-form";
+import PostStatusFilter from "../post-status-filter/post-status-filter";
 import { nanoid } from "nanoid";
 import "./app.scss";
 import { Component } from "react";
@@ -26,6 +27,7 @@ export default class App extends Component {
       ],
 
       term: "",
+      filter: "all",
     };
 
     this.deletePost = this.deletePost.bind(this);
@@ -33,6 +35,7 @@ export default class App extends Component {
     this.onToggleImportant = this.onToggleImportant.bind(this);
     this.onToggleLiked = this.onToggleLiked.bind(this);
     this.onUpdateSearch = this.onUpdateSearch.bind(this);
+    this.onFilterSelect = this.onFilterSelect.bind(this);
   }
 
   searchPost(items, term) {
@@ -45,8 +48,19 @@ export default class App extends Component {
     });
   }
 
+  filterPost(items, filter) {
+    if (filter === "like") {
+      return items.filter((item) => item.like);
+    } else {
+      return items;
+    }
+  }
+
   onUpdateSearch(term) {
     this.setState({ term });
+  }
+  onFilterSelect(filter) {
+    this.setState({ filter });
   }
 
   deletePost(id) {
@@ -116,12 +130,24 @@ export default class App extends Component {
   render() {
     const liked = this.state.data.filter((item) => item.like).length;
     const allPosts = this.state.data.length;
-    const visiblePosts = this.searchPost(this.state.data, this.state.term);
+    const visiblePosts = this.filterPost(
+      this.searchPost(this.state.data, this.state.term),
+      this.state.filter
+    );
 
     return (
       <div className="app">
         <AppHeader name="Illia Slobodianiuk" all={allPosts} likes={liked} />
-        <SearchPanel onUpdateSearch={this.onUpdateSearch} />
+        <div class="search-panel">
+          <SearchPanel
+            onUpdateSearch={this.onUpdateSearch}
+            filter={this.state.filter}
+          />
+          <PostStatusFilter
+            filter={this.state.filter}
+            onFilterSelect={this.onFilterSelect}
+          />
+        </div>
         <PostList
           posts={visiblePosts}
           onDelete={this.deletePost}

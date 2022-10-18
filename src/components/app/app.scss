@@ -15,3 +15,15 @@ input::placeholder {
   color: grey;
   font-weight: 500;
 }
+
+.search-panel {
+  margin: 1rem 0;
+  display: flex;
+}
+
+.search-panel .search-input {
+  width: auto;
+  flex-grow: 1;
+  margin-right: 3px;
+  margin-right: 5px;
+}
