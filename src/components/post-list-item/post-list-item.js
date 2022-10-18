@@ -5,31 +5,16 @@ import { ReactComponent as Trash } from "./trash.svg";
 import { ReactComponent as Heart } from "./heart.svg";
 
 export default class Post extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     important: false,
-  //     like: false,
-  //   };
-
-  //   this.onImportant = this.onImportant.bind(this);
-  //   this.onLike = this.onLike.bind(this);
-  // }
-
-  // onImportant() {
-  //   this.setState(({ important }) => ({ important: !important }));
-  // }
-
-  // onLike() {
-  //   this.setState(({ like }) => ({ like: !like }));
-  // }
-
   render() {
-    const { text, onDelete, onToggleImportant, onToggleLiked, important, like } = this.props;
-    // const { important, like } = this.state;
+    const {
+      text,
+      onDelete,
+      onToggleImportant,
+      onToggleLiked,
+      important,
+      like,
+    } = this.props;
 
-    console.log(like);
-    
     let className = "post-text";
     if (important === true) {
       className += " important";
