@@ -30,11 +30,11 @@ export default class AddPost extends Component {
       <form className="post-add-form" onSubmit={this.onSubmit}>
         <input
           type="text"
-          placeholder="Чтобы вы хотели добавить ?"
+          placeholder="Would you like to add?"
           onChange={this.onChangeValue}
           value={this.state.inpValue}
         />
-        <button type="submit" className="add">Добавить</button>
+        <button type="submit" className="add">Add</button>
       </form>
     );
   }
